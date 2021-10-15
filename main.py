@@ -1,16 +1,18 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def encode(message):
+    encoded_message = ""
+    i = 0
+    while (i <= len(message) - 1):
+        count = 1
+        ch = message[i]
+        j = i
+        while (j < len(message) - 1):
+            if (message[j] == message[j + 1]):
+                count = count + 1
+                j = j + 1
+            else:
+                break
+        encoded_message = encoded_message + str(count) + ch
+        i = j + 1
+    return encoded_message
+encoded_message = encode("ABBBBCCCCCCCCAB")
+print(encoded_message)
